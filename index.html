@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Anak Bangsa</title>
+  <title>Website Animasi</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
+      background: linear-gradient(to right, #667eea, #764ba2);
       margin: 0;
       padding: 0;
       color: white;
       text-align: center;
+      overflow-x: hidden;
     }
 
     .container {
-      padding: 50px;
+      padding: 80px 20px;
+      animation: fadeIn 2s ease-in;
     }
 
     h1 {
       font-size: 50px;
-      margin-bottom: 10px;
+      animation: slideDown 1s ease-out;
     }
 
     p {
       font-size: 20px;
+      animation: fadeIn 3s ease-in;
     }
 
     .btn {
@@ -38,30 +41,66 @@
     }
 
     .btn:hover {
+      transform: scale(1.1);
       background: #333;
       color: white;
     }
 
     .card {
       background: rgba(255,255,255,0.2);
-      margin: 20px auto;
+      margin: 30px auto;
       padding: 20px;
       border-radius: 15px;
       width: 300px;
+      animation: float 3s ease-in-out infinite;
     }
+
+    /* Animasi */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Animasi background bergerak */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBg 20s linear infinite;
+    }
+
+    @keyframes moveBg {
+      from { transform: translate(0,0); }
+      to { transform: translate(-50px,-50px); }
+    }
+
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>REDMITOTO</h1>
-    <p>Selamat datang di website saya</p>
+    <h1>Website Keren ⚡</h1>
+    <p>Ini sudah pakai animasi modern 😎</p>
 
     <button class="btn">Klik Saya</button>
 
     <div class="card">
-      <h3>Tentang Saya</h3>
-      <p>Saya sedang belajar membuat website 🚀</p>
+      <h3>🔥 Tentang Saya</h3>
+      <p>Saya sedang belajar coding + saham</p>
     </div>
   </div>
 </body>
