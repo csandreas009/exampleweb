@@ -1,61 +1,57 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
     background: #050b1a;
-    color: #fff;
+    color: white;
 }
 
-/* CONTAINER UTAMA */
+/* LAYOUT */
 .container {
     display: flex;
-    min-height: 100vh;
 }
 
 /* SIDEBAR */
 .sidebar {
-    width: 260px;
+    width: 250px;
     background: linear-gradient(180deg, #0a1633, #020617);
     padding: 20px;
-    border-right: 2px solid #0d2a66;
+    min-height: 100vh;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    color: #4da3ff;
+    color: #3b82f6;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* MENU */
 .menu {
     list-style: none;
 }
 
 .menu li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .menu a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px;
+    border: 1px solid #1e40af;
     border-radius: 8px;
     text-decoration: none;
     color: #cbd5ff;
-    border: 1px solid #1e3a8a;
     transition: 0.3s;
 }
 
 .menu a:hover {
-    background: #1e3a8a;
-    color: #fff;
-    box-shadow: 0 0 10px #2563eb;
+    background: #1e40af;
+    box-shadow: 0 0 10px #3b82f6;
 }
 
 /* CONTENT */
@@ -66,167 +62,89 @@ body {
 
 /* HEADER */
 .header {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .header input {
-    padding: 8px 12px;
-    border-radius: 6px;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
     border: none;
     background: #0f172a;
-    color: #fff;
+    color: white;
 }
 
 .header button {
+    padding: 8px 12px;
     background: #2563eb;
     border: none;
-    padding: 8px 15px;
-    border-radius: 6px;
-    color: #fff;
+    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.header button:hover {
-    background: #1d4ed8;
 }
 
 /* BANNER */
 .banner {
-    background: radial-gradient(circle at top, #1e3a8a, #020617);
-    border-radius: 15px;
+    background: linear-gradient(135deg, #1e3a8a, #020617);
     padding: 30px;
+    border-radius: 15px;
     margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
     border: 1px solid #1e40af;
 }
 
 .banner h1 {
-    font-size: 32px;
     color: #60a5fa;
 }
 
-.banner p {
-    margin-top: 10px;
-    color: #cbd5ff;
-}
-
-/* CARD GRID */
+/* CARDS */
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 15px;
+    margin-bottom: 20px;
 }
 
 .card {
-    background: linear-gradient(145deg, #0f172a, #020617);
-    border-radius: 12px;
-    padding: 15px;
+    flex: 1;
+    padding: 20px;
+    background: #020617;
+    border-radius: 10px;
     border: 1px solid #1e40af;
+    text-align: center;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #2563eb;
+    box-shadow: 0 0 10px #3b82f6;
 }
 
-/* GAME GRID */
+/* GAMES */
 .games {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    margin-top: 20px;
 }
 
 .game {
     background: #020617;
-    border-radius: 12px;
     padding: 10px;
-    text-align: center;
+    border-radius: 10px;
     border: 1px solid #1e40af;
+    text-align: center;
     transition: 0.3s;
 }
 
 .game:hover {
-    box-shadow: 0 0 12px #2563eb;
     transform: scale(1.05);
+    box-shadow: 0 0 10px #3b82f6;
 }
 
 .game img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .game span {
     display: block;
     margin-top: 8px;
     color: #93c5fd;
-}
-
-/* PANEL INFO */
-.panel {
-    margin-top: 20px;
-    background: #020617;
-    border: 1px solid #1e40af;
-    border-radius: 12px;
-    padding: 15px;
-}
-
-.panel h3 {
-    color: #60a5fa;
-    margin-bottom: 10px;
-}
-
-/* BADGE / STATUS */
-.status {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.status span {
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-}
-
-.online {
-    background: #16a34a;
-}
-
-.offline {
-    background: #dc2626;
-}
-
-.maintenance {
-    background: #f59e0b;
-}
-
-/* BUTTON */
-.btn {
-    background: linear-gradient(90deg, #1d4ed8, #2563eb);
-    border: none;
-    padding: 10px;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    box-shadow: 0 0 10px #3b82f6;
-}
-
-/* SCROLLBAR */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #1e3a8a;
-    border-radius: 10px;
 }
