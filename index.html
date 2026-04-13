@@ -1,194 +1,232 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Berita Anak Bangsa</title>
-  
-  <!-- Meta SEO -->
-  <meta name="description" content="Berita Anak Bangsa: informasi terkini nasional, teknologi, dan inovasi anak muda Indonesia.">
-  <meta name="keywords" content="berita, anak bangsa, teknologi, nasional, startup, investasi">
-  <meta name="author" content="Nama Kamu">
-  
-  <!-- Google Search Console Verifikasi -->
-  <meta name="google-site-verification" content="MASUKKAN_KODE_UNIK_GOOGLE_DISINI">
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-  <style>
-    /* =================== GENERAL =================== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #555555;
-    }
+body {
+    background: #050b1a;
+    color: #fff;
+}
 
-    a { text-decoration: none; color: #1976d2; }
-    a:hover { color: #004ba0; }
+/* CONTAINER UTAMA */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
 
-    /* =================== HEADER =================== */
-    header {
-      background: linear-gradient(to right, #667eea, #764ba2);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 32px;
-      font-weight: bold;
-    }
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #0a1633, #020617);
+    padding: 20px;
+    border-right: 2px solid #0d2a66;
+}
 
-    /* =================== NAVBAR =================== */
-    nav {
-      background-color: #333333;
-      text-align: center;
-      padding: 10px 0;
-    }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4da3ff;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    nav a {
-      margin: 0 15px;
-      color: white;
-      font-weight: bold;
-    }
+/* MENU */
+.menu {
+    list-style: none;
+}
 
-    nav a:hover { color: #ffcc00; }
+.menu li {
+    margin-bottom: 12px;
+}
 
-    /* =================== MAIN CONTAINER =================== */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 20px;
-      gap: 20px;
-    }
+.menu a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #cbd5ff;
+    border: 1px solid #1e3a8a;
+    transition: 0.3s;
+}
 
-    /* =================== MAIN CONTENT =================== */
-    .main {
-      flex: 2;
-      min-width: 300px;
-    }
+.menu a:hover {
+    background: #1e3a8a;
+    color: #fff;
+    box-shadow: 0 0 10px #2563eb;
+}
 
-    .main img {
-      width: 100%;
-      border-radius: 10px;
-    }
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 20px;
+}
 
-    .main h2 {
-      margin: 10px 0;
-      color: #212121;
-    }
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
 
-    .news-list .news-item {
-      background-color: rgba(255,255,255,0.8);
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+.header input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #0f172a;
+    color: #fff;
+}
 
-    .news-list .news-item:hover { transform: scale(1.02); }
+.header button {
+    background: #2563eb;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-    /* =================== SIDEBAR =================== */
-    .sidebar {
-      flex: 1;
-      min-width: 200px;
-    }
+.header button:hover {
+    background: #1d4ed8;
+}
 
-    .sidebar-box {
-      background-color: rgba(255,255,255,0.8);
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-    }
+/* BANNER */
+.banner {
+    background: radial-gradient(circle at top, #1e3a8a, #020617);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #1e40af;
+}
 
-    .sidebar-box h3 { color: #d32f2f; margin-bottom: 10px; }
+.banner h1 {
+    font-size: 32px;
+    color: #60a5fa;
+}
 
-    /* =================== BUTTON =================== */
-    .btn {
-      background-color: #ffcc00;
-      color: #333;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-      display: inline-block;
-      margin: 10px 0;
-    }
+.banner p {
+    margin-top: 10px;
+    color: #cbd5ff;
+}
 
-    .btn:hover {
-      background-color: #333333;
-      color: white;
-      transform: scale(1.05);
-    }
+/* CARD GRID */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
 
-    /* =================== FOOTER =================== */
-    footer {
-      background-color: #333333;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
+.card {
+    background: linear-gradient(145deg, #0f172a, #020617);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #1e40af;
+    transition: 0.3s;
+}
 
-    /* =================== RESPONSIVE =================== */
-    @media(max-width: 768px){
-      .container { flex-direction: column; }
-    }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #2563eb;
+}
 
-  </style>
-</head>
-<body>
+/* GAME GRID */
+.games {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
 
-  <header>📰 Berita Anak Bangsa</header>
+.game {
+    background: #020617;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #1e40af;
+    transition: 0.3s;
+}
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Nasional</a>
-    <a href="#">Teknologi</a>
-    <a href="#">Ekonomi</a>
-    <a href="#">Olahraga</a>
-  </nav>
+.game:hover {
+    box-shadow: 0 0 12px #2563eb;
+    transform: scale(1.05);
+}
 
-  <div class="container">
+.game img {
+    width: 100%;
+    border-radius: 10px;
+}
 
-    <!-- MAIN CONTENT -->
-    <div class="main">
-      <img src="https://via.placeholder.com/800x400" alt="Berita Utama">
-      <h2>Anak Muda Indonesia Sukses di Dunia Digital</h2>
-      <p>Banyak anak bangsa yang berhasil membangun startup dan sukses di era digital...</p>
-      <a href="#" class="btn">Baca Selengkapnya</a>
+.game span {
+    display: block;
+    margin-top: 8px;
+    color: #93c5fd;
+}
 
-      <div class="news-list">
-        <div class="news-item">
-          <h3>Startup Lokal Mendunia</h3>
-          <p>Perusahaan teknologi Indonesia mulai dikenal global...</p>
-        </div>
-        <div class="news-item">
-          <h3>Investasi Saham Meningkat</h3>
-          <p>Generasi muda mulai tertarik dengan dunia investasi...</p>
-        </div>
-      </div>
-    </div>
+/* PANEL INFO */
+.panel {
+    margin-top: 20px;
+    background: #020617;
+    border: 1px solid #1e40af;
+    border-radius: 12px;
+    padding: 15px;
+}
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <div class="sidebar-box">
-        <h3>🔥 Trending</h3>
-        <p>AI berkembang pesat di Indonesia</p>
-        <p>Crypto kembali naik</p>
-      </div>
+.panel h3 {
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
 
-      <div class="sidebar-box">
-        <h3>📌 Kategori</h3>
-        <p>Teknologi</p>
-        <p>Bisnis</p>
-        <p>Pendidikan</p>
-      </div>
-    </div>
+/* BADGE / STATUS */
+.status {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
 
-  </div>
+.status span {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
 
-  <footer>
-    © 2026 Berita Anak Bangsa
-  </footer>
+.online {
+    background: #16a34a;
+}
 
-</body>
-</html>
+.offline {
+    background: #dc2626;
+}
+
+.maintenance {
+    background: #f59e0b;
+}
+
+/* BUTTON */
+.btn {
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e3a8a;
+    border-radius: 10px;
+}
