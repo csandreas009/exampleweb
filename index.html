@@ -1,107 +1,165 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Website Animasi</title>
+  <title>Berita Anak Bangsa</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #667eea, #764ba2);
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* HEADER */
+    header {
+      background: #d32f2f;
       color: white;
+      padding: 15px;
       text-align: center;
-      overflow-x: hidden;
+      font-size: 28px;
+      font-weight: bold;
     }
 
+    /* NAVBAR */
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* CONTAINER */
     .container {
-      padding: 80px 20px;
-      animation: fadeIn 2s ease-in;
+      display: flex;
+      margin: 20px;
+      gap: 20px;
     }
 
-    h1 {
-      font-size: 50px;
-      animation: slideDown 1s ease-out;
+    /* MAIN NEWS */
+    .main {
+      flex: 2;
     }
 
-    p {
-      font-size: 20px;
-      animation: fadeIn 3s ease-in;
+    .main img {
+      width: 100%;
+      border-radius: 10px;
     }
 
-    .btn {
+    .main h2 {
+      margin-top: 10px;
+    }
+
+    /* LIST BERITA */
+    .news-list {
       margin-top: 20px;
-      padding: 12px 25px;
+    }
+
+    .news-item {
       background: white;
-      color: #333;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
-    .btn:hover {
-      transform: scale(1.1);
+    .news-item:hover {
+      transform: scale(1.02);
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      flex: 1;
+    }
+
+    .sidebar-box {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    /* FOOTER */
+    footer {
       background: #333;
       color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.2);
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 15px;
-      width: 300px;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    /* Animasi */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
-    }
-
-    /* Animasi background bergerak */
-    body::before {
-      content: "";
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-      background-size: 50px 50px;
-      animation: moveBg 20s linear infinite;
-    }
-
-    @keyframes moveBg {
-      from { transform: translate(0,0); }
-      to { transform: translate(-50px,-50px); }
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
     }
 
   </style>
 </head>
 
 <body>
+
+  <header>📰 Berita Anak Bangsa</header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Nasional</a>
+    <a href="#">Teknologi</a>
+    <a href="#">Ekonomi</a>
+    <a href="#">Olahraga</a>
+  </nav>
+
   <div class="container">
-    <h1> Admintoto⚡</h1>
-    <p>Selamat datang di situs Gacor</p>
 
-    <button class="btn">Klik DAFTAR</button>
+    <!-- MAIN -->
+    <div class="main">
+      <img src="https://via.placeholder.com/800x400">
+      <h2>Anak Muda Indonesia Sukses di Dunia Digital</h2>
+      <p>Banyak anak bangsa yang berhasil membangun startup dan sukses di era digital...</p>
 
-    <div class="card">
-      <h3>🔥 Tentang Saya</h3>
-      <p>Saya sedang belajar coding + saham</p>
+      <div class="news-list">
+        <div class="news-item">
+          <h3>Startup Lokal Mendunia</h3>
+          <p>Perusahaan teknologi Indonesia mulai dikenal global...</p>
+        </div>
+
+        <div class="news-item">
+          <h3>Investasi Saham Meningkat</h3>
+          <p>Generasi muda mulai tertarik dengan dunia investasi...</p>
+        </div>
+      </div>
     </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-box">
+        <h3>🔥 Trending</h3>
+        <p>AI berkembang pesat di Indonesia</p>
+        <p>Crypto kembali naik</p>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>📌 Kategori</h3>
+        <p>Teknologi</p>
+        <p>Bisnis</p>
+        <p>Pendidikan</p>
+      </div>
+    </div>
+
   </div>
+
+  <footer>
+    © 2026 Berita Anak Bangsa
+  </footer>
+
 </body>
 </html>
